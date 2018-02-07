@@ -21,6 +21,12 @@ class JasperConan(ConanFile):
                        "jasper.zip")
         tools.unzip("jasper.zip")
         os.remove("jasper.zip")
+        tools.replace_in_file("jasper-version-%s/CMakeLists.txt" % self.version,
+                              "project(JasPer LANGUAGES C)",
+                              """project(JasPer LANGUAGES C)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+""")
 
     def build(self):
         cmake = CMake(self)

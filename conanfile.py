@@ -34,7 +34,6 @@ conan_basic_setup()
         cmake.definitions["JAS_ENABLE_DOC"] = "False"
         cmake.definitions["JAS_ENABLE_PROGRAMS"] = "False"
         cmake.definitions["JAS_ENABLE_SHARED"] = "True" if self.options.shared else "False"
-        cmake.definitions["JAS_ENABLE_AUTOMATIC_DEPENDENCIES"] = "False"
         cmake.definitions["JAS_LIBJPEG_REQUIRED"] = "REQUIRED"
         cmake.definitions["JAS_ENABLE_OPENGL"] = "False"
         cmake.configure(source_folder="jasper-version-%s" % self.version)

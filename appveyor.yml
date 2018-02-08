@@ -10,6 +10,7 @@ environment:
     CONAN_LOGIN_USERNAME: "conanbot"
     CONAN_CHANNEL: "testing"
     CONAN_UPLOAD: "https://api.bintray.com/conan/conan-community/conan"
+    CONAN_REMOTES: "https://api.bintray.com/conan/bincrafters/public-conan"
 
     matrix:
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015

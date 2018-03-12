@@ -6,6 +6,7 @@ class JasperConan(ConanFile):
     name = "jasper"
     version = "2.0.14"
     license = "JasPer License Version 2.0"
+    homepage = "https://github.com/mdadams/jasper"
     url = "https://github.com/conan-community/conan-jasper"
     description = "JasPer Image Processing/Coding Tool Kit"
     settings = "os", "compiler", "build_type", "arch"
@@ -47,6 +48,7 @@ conan_basic_setup()
         self.copy("*.so*", dst="lib", keep_path=False, symlinks=True)
         self.copy("*.dylib", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
+        self.copy("LICENSE", src="jasper-version-%s" % self.version)
 
     def package_info(self):
         self.cpp_info.libs = ["jasper"]

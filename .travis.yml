@@ -7,7 +7,6 @@ env:
      - CONAN_STABLE_BRANCH_PATTERN: "stable/*"
      - CONAN_CHANNEL: "testing"
      - CONAN_UPLOAD: "https://api.bintray.com/conan/conan-community/conan"
-     - CONAN_REMOTES: "https://api.bintray.com/conan/bincrafters/public-conan"
 
 linux: &linux
    os: linux

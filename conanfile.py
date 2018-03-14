@@ -1,12 +1,11 @@
 from conans import ConanFile, CMake, tools
-import os
 
 
 class JasperConan(ConanFile):
     name = "jasper"
     version = "2.0.14"
     license = "JasPer License Version 2.0"
-    homepage = "https://github.com/mdadams/jasper"
+    homepage = "http://www.ece.uvic.ca/~frodo/jasper/"
     url = "https://github.com/conan-community/conan-jasper"
     description = "JasPer Image Processing/Coding Tool Kit"
     settings = "os", "compiler", "build_type", "arch"
@@ -19,10 +18,7 @@ class JasperConan(ConanFile):
         del self.settings.compiler.libcxx
 
     def source(self):
-        tools.download("https://github.com/mdadams/jasper/archive/version-%s.zip" % self.version,
-                       "jasper.zip")
-        tools.unzip("jasper.zip")
-        os.remove("jasper.zip")
+        tools.get("https://github.com/mdadams/jasper/archive/version-%s.zip" % self.version)
         tools.replace_in_file("jasper-version-%s/CMakeLists.txt" % self.version,
                               "project(JasPer LANGUAGES C)",
                               """project(JasPer LANGUAGES C)

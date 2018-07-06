@@ -10,10 +10,15 @@ class JasperConan(ConanFile):
     url = "https://github.com/conan-community/conan-jasper"
     description = "JasPer Image Processing/Coding Tool Kit"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
+    options = {"shared": [True, False],
+               "fPIC": [True, False]}
+    default_options = "shared=False", "fPIC=True"
     requires = "libjpeg/9b@bincrafters/stable"
     generators = "cmake"
+
+    def config_options(self):
+        if self.settings.os == "Windows":
+            del self.options.fPIC
 
     def configure(self):
         del self.settings.compiler.libcxx

@@ -12,7 +12,7 @@ class JasperConan(ConanFile):
     options = {"shared": [True, False],
                "fPIC": [True, False]}
     default_options = "shared=False", "fPIC=True"
-    requires = "libjpeg/9b@bincrafters/stable"
+    requires = "libjpeg/9c@bincrafters/stable"
     generators = "cmake"
 
     def config_options(self):

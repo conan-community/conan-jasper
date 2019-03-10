@@ -10,10 +10,16 @@ class JasperConan(ConanFile):
     description = "JasPer Image Processing/Coding Tool Kit"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False],
-               "fPIC": [True, False]}
-    default_options = "shared=False", "fPIC=True"
-    requires = "libjpeg/9c@bincrafters/stable"
+               "fPIC": [True, False],
+               "jpegturbo": [True, False]}
+    default_options = "shared=False", "fPIC=True", "jpegturbo=False"
     generators = "cmake"
+
+    def requirements(self):
+        if self.options.jpegturbo:
+            self.requires.add('libjpeg-turbo/1.5.2@bincrafters/stable')
+        else:
+            self.requires.add('libjpeg/9c@bincrafters/stable')
 
     def config_options(self):
         if self.settings.os == "Windows":

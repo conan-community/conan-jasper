@@ -51,6 +51,7 @@ The following command both runs all the steps of the conan file, and publishes t
 | ------------- |:----------------- |:------------:|
 | shared      | False |  [True, False] |
 | fPIC      | True |  [True, False] |
+| jpegturbo | False |  [True, False] |
 
 
 ## Add Remote

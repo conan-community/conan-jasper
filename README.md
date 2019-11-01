@@ -1,3 +1,5 @@
+**[OBSOLETE]** The recipe is now in https://github.com/conan-io/conan-center-index
+
 [![Download](https://api.bintray.com/packages/conan-community/conan/jasper%3Aconan/images/download.svg) ](https://bintray.com/conan-community/conan/jasper%3Aconan/_latestVersion)
 [![Build Status Travis](https://travis-ci.org/conan-community/conan-jasper.svg)](https://travis-ci.org/conan-community/conan-jasper)
 [![Build Status AppVeyor](https://ci.appveyor.com/api/projects/status/github/conan-community/conan-jasper?svg=true)](https://ci.appveyor.com/project/ConanCIintegration/conan-jasper)
